@@ -1,0 +1,17 @@
+.bet-row {
+}
+
+$columnColor: #eeebeb;
+.team,
+.draw {
+  background: $columnColor;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-right: 5px solid white;
+
+  &:hover {
+    cursor: pointer;
+    background: darken($columnColor, 5);
+  }
+}

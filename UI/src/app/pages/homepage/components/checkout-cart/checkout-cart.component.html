@@ -1,0 +1,25 @@
+<div class="checkout">
+  <h3>{{ "Checkout" | translate }}</h3>
+  <div class="checkout-item-wrapper" *ngIf="checkoutItems.length">
+    <div class="checkout-item" *ngFor="let item of checkoutItems; let i = index;">
+      <div class="title">{{item.title}}</div>
+      <div class="bet-wrapper row">
+        <div class="coefficient col s6">
+          {{item.coefficient}}
+        </div>
+        <div class="stake col s6">
+          <label for="stake">{{ "Your stake" | translate }}</label>
+          <input [(ngModel)]="checkoutItems[i]['stake']" type="text" name="stake" id="stake">
+        </div>
+      </div>
+    </div>
+    <div class="bottom-wrapper">
+      <span>{{ "Possible winnings" | translate }}: {{getTotal()}} czk</span>
+      <div class="btn right">{{ "Place bet" | translate }}</div>
+    </div>
+  </div>
+  <div class="empty-checkout" *ngIf="!checkoutItems.length">
+    <strong>{{ "Your checkout is empty, please make your bet" | translate }}!</strong>
+  </div>
+
+</div>

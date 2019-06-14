@@ -1,0 +1,23 @@
+.title {
+  padding: 5px;
+  background: #eeebeb;
+  font-weight: bold;
+}
+
+.coefficient {
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.bet-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

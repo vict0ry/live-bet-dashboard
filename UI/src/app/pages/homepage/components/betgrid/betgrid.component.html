@@ -1,0 +1,27 @@
+<div class="app-grid" *ngIf="bets?.length">
+  <div [ngStyle]="{height: height}">
+    <h3>
+      <ng-content></ng-content>
+    </h3>
+    <div class="bet-row" *ngFor="let bet of bets">
+      <div class="header col s12">
+        {{bet.teams[0].name}} {{ "VS" | translate }} {{bet.teams[1].name}}
+      </div>
+      <div class="row">
+        <div class="team col m3 s12" (click)="columnSelected(bet, shortNumber(bet.teams[0].win))">
+          <span class="team-name">{{bet.teams[0].name}}</span> -
+          <span class="bet-amount">{{shortNumber(bet.teams[0].win)}}</span>
+        </div>
+        <div class="draw col m3 s12"
+             (click)="columnSelected(bet, shortNumber(bet.draw))">
+          <span>{{ "draw" | translate }}:</span> - <span>{{shortNumber(bet.draw)}}</span>
+        </div>
+        <div class="team col m3 s12"
+             (click)="columnSelected(bet, shortNumber(bet.teams[1].win))">
+          <span class="team-name">{{bet.teams[1].name}}</span> -
+          <span class="bet-amount">{{shortNumber(bet.teams[1].win)}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
